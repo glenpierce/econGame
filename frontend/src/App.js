@@ -9,8 +9,8 @@ class ProductCategoryRow extends React.Component {
             React.createElement("tr", null, 
                 React.createElement("th", { colSpan: "2" },
                     category)));
-    }}
-
+    }
+}
 
 class ProductRow extends React.Component {
     render() {
@@ -24,8 +24,8 @@ class ProductRow extends React.Component {
             React.createElement("tr", null, 
                 React.createElement("td", null, name), 
                 React.createElement("td", null, product.price)));
-    }}
-
+    }
+}
 
 class ProductTable extends React.Component {
     render() {
@@ -55,7 +55,8 @@ class ProductTable extends React.Component {
                         React.createElement("th", null, "Name"), 
                         React.createElement("th", null, "Price"))),
                 React.createElement("tbody", null, rows)));
-    }}
+    }
+}
 
 class SearchBar extends React.Component {
     render() {
@@ -65,15 +66,28 @@ class SearchBar extends React.Component {
                 React.createElement("p", null, 
                     React.createElement("input", { type: "checkbox" }),
                     ' ', "Only show products in stock")));
-    }}
+    }
+}
 
 class FilterableProductTable extends React.Component {
     render() {
         return (
             React.createElement("div", null, 
                 React.createElement(SearchBar, null), 
-                React.createElement(ProductTable, { products: this.props.products })));
-    }}
+                React.createElement(ProductTable, { products: this.props.products })
+            )
+        );
+    }
+}
+
+class Message extends React.Component {
+    render() {
+        const message = this.props.message;
+        return (
+            <h1 className="App-title">{message}</h1>
+        )
+    }
+}
 
 const PRODUCTS = [
     { category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football' },
@@ -94,7 +108,10 @@ function App () {
         });
   },[])
   return (
-      <FilterableProductTable products={PRODUCTS} />
+      <div>
+          <FilterableProductTable products={PRODUCTS} />
+          <Message message={message} />
+      </div>
   )
 }
 export default App;
