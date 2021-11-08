@@ -1,0 +1,15 @@
+<?xmlversion="1.0"?>
+<!DOCTYPEhibernate-mappingPUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mappingPUBLIC>
+    <class name="dev.cear.webApp.model.User" table="USER">
+        <id name="userId" type="Long" column="USER_ID">
+            <generator class="assigned"/>
+        </id>
+<!--        <property name="userName">-->
+<!--            <column name="USERNAME"/>-->
+<!--        </property>-->
+    </class>
+</hibernate-mappingPUBLIC>
