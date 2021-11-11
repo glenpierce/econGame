@@ -4,12 +4,10 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mappingPUBLIC>
-    <class name="dev.cear.webApp.model.User" table="USER">
-        <id name="userId" type="Long" column="USER_ID">
+    <class name="dev.cear.webApp.model.User" table="userobject">
+        <id name="id" type="Long" column="id">
             <generator class="assigned"/>
         </id>
-<!--        <property name="userName">-->
-<!--            <column name="USERNAME"/>-->
-<!--        </property>-->
+        <property name="username" column="username" type="string"/>
     </class>
 </hibernate-mappingPUBLIC>

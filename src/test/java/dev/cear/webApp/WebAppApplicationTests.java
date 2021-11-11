@@ -23,8 +23,8 @@ class WebAppApplicationTests {
 		session.beginTransaction();
 
 		UserObject user = new UserObject();
-		user.setUserId(1L);
-		user.setUserName("userName");
+		user.setId(1L);
+		user.setUsername("userName");
 
 		session.save(user);
 		session.getTransaction().commit();
